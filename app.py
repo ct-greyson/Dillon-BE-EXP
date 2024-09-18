@@ -96,7 +96,7 @@ def get_customers():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -118,7 +118,7 @@ def get_customer(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-            if conn and conn.is_connected():
+            if conn:
                 cursor.close()
                 conn.close()
 
@@ -146,7 +146,7 @@ def add_customer():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -174,7 +174,7 @@ def update_customer(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -200,7 +200,7 @@ def delete_customer(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -226,7 +226,7 @@ def get_product_list():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -247,7 +247,7 @@ def get_product(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -276,7 +276,7 @@ def add_product():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -304,7 +304,7 @@ def update_product_info(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -332,7 +332,7 @@ def remove_product(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -356,7 +356,7 @@ def retrieve_orders():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -378,7 +378,7 @@ def get_order(order_id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -405,7 +405,7 @@ def add_order():
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -433,7 +433,7 @@ def update_order(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
@@ -459,7 +459,7 @@ def delete_order(id):
         return jsonify({"error": "Internal Server Error"}), 500
 
     finally:
-        if conn and conn.is_connected():
+        if conn:
             cursor.close()
             conn.close()
 
