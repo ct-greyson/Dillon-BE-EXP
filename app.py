@@ -60,13 +60,10 @@ def get_db_connection():
             database=db_name,
             user=user,
             password=password,
-            host=host,
-            port=5432
+            host=host
         )
 
-        if conn.is_connected():
-            print("Connected successfully")
-            return conn
+        return conn
 
     except Error as e:
         print(f"Error: {e}")
