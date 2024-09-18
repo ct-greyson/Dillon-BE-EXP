@@ -10,6 +10,17 @@ app = Flask(__name__)
 ma = Marshmallow(app)  ## Create instance of marshmallow to validate later
 CORS(app)
 
+def execute_sql_file(cursor, file_path):
+    try:
+        with open(file_path, 'r') as sql_file:
+            # Read the entire SQL file
+            sql_queries = sql_file.read()
+            
+            # Execute each SQL statement (split by semicolons)
+            cursor.execute(sql_queries)
+            print("SQL file executed successfully")
+    except Exception as e:
+        print(f"Error executing SQL file: {e}")
 
 #################VALIDATION WITH SCHEMA ########################
 
