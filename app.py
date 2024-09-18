@@ -288,7 +288,7 @@ def add_product():
         cursor = conn.cursor()
     
         new_product = (product_data['product_name'], product_data['price'], product_data['product_description'])
-        query= "INSERT INTO customers(product_name, price, product_description) VALUES (%s, %s, %s)"
+        query= "INSERT INTO products(product_name, price, product_description) VALUES (%s, %s, %s)"
         cursor.execute(query, new_product)
         conn.commit()
 
