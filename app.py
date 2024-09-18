@@ -108,7 +108,7 @@ def get_customers():
         conn = get_db_connection()
         if conn is None:
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         query = "SELECT * FROM Customers"
         cursor.execute(query)
         customers = cursor.fetchall()
@@ -130,7 +130,7 @@ def get_customer(id):
         conn = get_db_connection()
         if conn is None:
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         customer_to_get = (id, )
         cursor.execute("SELECT * FROM Customers WHERE id = %s", customer_to_get)
         customer = cursor.fetchall()
@@ -237,7 +237,7 @@ def get_product_list():
         if conn is None:
 
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
 
         query = "SELECT * FROM products"
         cursor.execute(query)
@@ -259,7 +259,7 @@ def get_product(id):
         conn = get_db_connection()
         if conn is None:
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         product_to_get = (id, )
         cursor.execute("SELECT * FROM products WHERE id =%s", product_to_get)
         product = cursor.fetchall()
@@ -368,7 +368,7 @@ def retrieve_orders():
         conn = get_db_connection()
         if conn is None:
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         query = "SELECT * FROM orders"
         cursor.execute(query)
         orders = cursor.fetchall()
@@ -390,7 +390,7 @@ def get_order(order_id):
         conn = get_db_connection()
         if conn is None:
             return jsonify({"error": "Database connection failed"}), 500
-        cursor = conn.cursor(dictionary=True)
+        cursor = conn.cursor()
         order_to_get = (order_id, )
         cursor.execute("SELECT * FROM orders WHERE id =%s", order_to_get)
         order = cursor.fetchall()
