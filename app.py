@@ -45,10 +45,13 @@ orders_schema = OrderSchema(many= True)
 product_schema = ProductSchema()
 products_schema = ProductSchema(many= True)
 
-db_name = "e_commerce_db"
-user = "root"
-password = "1126"
-host = "localhost"
+
+# postgresql://postgresql_ecomm_148_r6fl_user:KLp5jExc2Hv2nVpnH30dpA0YC1BMcExE@dpg-crl1vh56l47c73fq6h80-a/postgresql_ecomm_148_r6fl
+
+db_name = "postgresql_ecomm_148_r6fl"
+user = "postgresql_ecomm_148_r6fl_user"
+password = "KLp5jExc2Hv2nVpnH30dpA0YC1BMcExE"
+host = "dpg-crl1vh56l47c73fq6h80-a"
 
 def get_db_connection():
     try:
