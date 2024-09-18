@@ -37,7 +37,7 @@ VALUES
 INSERT INTO products (product_name, price, product_description)
 VALUES 
     ('Desk Chair', 189.95, 'Perfect option for gaming, working and studying, the aggressive and fabulous look brings a special yet unique tone to both game room and modern office. Meanwhile, you can also chill out and take a break for fun by reclining the chair after hours of working or gaming.'),
-    ('Gaming Mouse', 69.95, 'The Optimal mouse for gaming. Attractive RGB lighting and quick response with low latency is every gamer\'s dream and you have it here!'),
+    ('Gaming Mouse', 69.95, 'The Optimal mouse for gaming. Attractive RGB lighting and quick response with low latency is every gamers dream and you have it here!'),
     ('Canned Air', 3.99, 'Keep your setup clean and tidy with powerful canned air! Dust bunnies be gone!');
     
 -- Drop 'products' table (optional, depending on your use case)
