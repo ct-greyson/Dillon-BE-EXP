@@ -1,4 +1,5 @@
 import mysql.connector
+import psycopg2
 from mysql.connector import Error
 from flask import Flask, jsonify, request
 from flask_marshmallow import Marshmallow
@@ -55,11 +56,12 @@ host = "dpg-crl1vh56l47c73fq6h80-a"
 
 def get_db_connection():
     try:
-        conn = mysql.connector.connect(
+        conn = psycopg2.connect(
             database=db_name,
             user=user,
             password=password,
-            host=host
+            host=host,
+            port=5432
         )
 
         if conn.is_connected():
