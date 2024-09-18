@@ -1,5 +1,6 @@
 import mysql.connector
 import psycopg2
+from psycopg2 import OperationalError
 from mysql.connector import Error
 from flask import Flask, jsonify, request
 from flask_marshmallow import Marshmallow
@@ -74,9 +75,20 @@ def get_db_connection():
             host=host
         )
 
+        conn.autocommit = True  # Automatically commit after each transaction
+        cursor = conn.cursor()
+
+        # Path to your SQL file
+        sql_file_path = 'EcommAPI_MySQL.sql'
+
+        # Execute the SQL file
+        execute_sql_file(cursor, sql_file_path)
+
         return conn
 
-    except Error as e:
+    except OperationalError as e:
+        print(f"Database connection error: {e}")
+    except Exception as e:
         print(f"Error: {e}")
         return None
 
